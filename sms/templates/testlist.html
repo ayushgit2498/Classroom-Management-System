@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Test Records{% endblock %}
+
+{% block main %}
+
+<section class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a class="text-primary" href="/">Home</a></li>
+                <li><a class="text-primary" href="/test">Test Records</a></li>
+                {% if id %}
+                <li><a class="text-primary" href="/students">Students</a></li>
+                {% endif %}
+                <li class="active">Add Test Records</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+
+            <div class="record-table-container panel panel-default">
+                <table class="table table-bordered table-condensed" id="studentsTable" style="background:white;">
+                    <thead>
+                    <tr class="success">
+                        <th class="">ID</th>
+                        <th class="">Date</th>
+                        <th class="">Subject</th>
+                        <th class="">Toal Marks</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                    {% for x in test %}
+                    <tr class="">
+                        <td class="col-md-1">
+                            <input class="form-control c-p" disabled type="text"
+                                   placeholder="{{x.id}}">
+                        </td>
+                        <td class="col-md-1">
+                            <input class="form-control c-p" disabled type="text"
+                                   placeholder="{{x.date}}">
+                        </td>
+                        <td class="col-md-1">
+                            <input class="form-control c-p" disabled type="text"
+                                   placeholder="{{x.subject}}">
+                        </td>
+                        <td class="col-md-1">
+                            <input class="form-control c-p" disabled type="text"
+                                   placeholder="{{x.tm}}">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- <script>
+$(document).ready(function () {
+$(".test-record-form").on("submit", function(e) {
+    e.preventDefault();
+    addNewTestRecord($(this)[0], $(this).attr("id"))
+});
+
+function addNewTestRecord(form, formID) {
+    var form_data = new FormData(form);
+
+    $.ajax({
+        type: 'POST',
+        url: '/addnewtestrecord',
+        data: form_data,
+        contentType: false,
+        processData: false,
+        dataType: 'json'
+    }).done(function(data, textStatus, jqXHR){
+        console.log(data);
+        console.log(textStatus);
+        console.log(jqXHR);
+        console.log('Success!');
+        if (data[0]["status"] == "error") {
+            $("#" + formID).parent().addClass("danger");
+        } else if (data[0]["status"] == "success") {
+            $("#" + formID).parent().removeClass("danger");
+            $("#" + formID).parent().find("input[type='Submit']").removeClass("btn-warning");
+            $("#" + formID).parent().find("input[type='Submit']").addClass("btn-default");
+            $("#" + formID).parent().find("input[type='Submit']").addClass("btn-xs");
+            $("#" + formID).parent().find("input[type='Submit']").val("Submitted");
+            $("#" + formID).parent().find("input").attr("disabled", "true");
+        }
+    }).fail(function(data){
+        console.log("ERROR:");
+    });
+}
+
+if (window.innerWidth < 760){
+    $(".record-table-container").addClass("table-responsive");
+    $(".record-table-container").css("min-height", "220px;");
+}
+});
+</script> -->
+
+{% endblock %}

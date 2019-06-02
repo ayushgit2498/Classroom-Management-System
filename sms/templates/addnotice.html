@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Employee</title>
+    <!-- Favicon -->
+    <link href="/static/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href=" https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="/static/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- Argon CSS -->
+    <link type="text/css" href=" /static/css/argon.css?v=1.0.1 " rel="stylesheet">
+    <!-- Docs CSS -->
+    <link type="text/css" href=" /static/css/docs.min.css " rel="stylesheet">
+    <link rel="stylesheet" href=" /static/css/fstyle.css ">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <style type="text/css">
+
+      .navtop
+      {
+
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.8);
+      }
+      .navbot
+      {
+
+
+        box-shadow: 0px 1px 20px rgba(0,0,0,0.8);
+      }
+
+      .ncc
+      {
+        border-radius:10px;
+        background-color:rgba(0,0,0,0.4);
+
+/*        box-shadow: 0px 5px 25px rgba(255,255,255,0.6);
+*/        cursor: pointer;
+
+
+      }
+      .btn
+      {
+        background-color: rgba(0,0,0,0);
+        color:black;
+        box-shadow: 0px 3px 5px rgba(0,0,0,0.6);
+      }
+      .main1{
+        height: 90vh;
+      }
+      .tstyle{
+        font-size: 25px;
+        color: black;
+        font-weight: bold;
+      }
+      .tstyle1{
+        font-size: 30px;
+
+      }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar  bg-dark navtop py-0">
+
+    <div class="navbar-brand  ncc " style="padding: 6px 6px 2px 6px;"><img src="/static/img/navfeed.png" width="50"
+                                                                           height="45" alt=""></div>
+    <div style="font-size: 30px; position: absolute; left:10vh ;color: white">Institute</div>
+    <a class="" href="#" role="button" style="color: white;position: absolute;left: 35vh;">Profile</a>
+    <a class="" href="#" role="button" style="color: white;position: absolute;left: 44vh;">ChildProfile</a>
+    <a class="" href="#" role="button" style="color: white;position: absolute;left: 58vh;">Absent</a>
+    <a class="" href="#" role="button" style="color: white;position: absolute;left: 68vh;">Performance</a>
+    <a class="" href="#" role="button" style="color: white;position: absolute;left: 83vh;">Test Rank</a>
+    <a class="" href="#" role="button" style="color: white ;position: absolute;left: 95vh;">Notice</a>
+
+    <button class="btn mr-2 border border-success logout " type="button" style="color: white;">Log Out</button>
+
+</nav>
+
+
+<div class="container-fluid">
+    <div class="row" style="background: inherit;">
+        <div class="col-lg-1" style="height: 95vh">
+        </div>
+        <div class="col-lg-10  mx-auto" style="background: inherit;">
+            <div class="row">
+                <form action="/notice/" class="test-record-form" method="post">
+                    {% csrf_token %}
+                    <section class="container">
+                        <div class="row">
+                            <div class="col-md-3 my-5">
+                                <input class="form-control c-p" name="dateT" type="date" value="" placeholder="Date"
+                                       style="width:15vh">
+                            </div>
+                            <div class="col-md-3 mx-3 my-5">
+                                <input class="form-control c-p" name="notice" type="text" value="" placeholder="Notice"
+                                       style="width:50vh">
+                            </div>
+                            <button type="submit" class="col-md-3 my-5"
+                                    style="position:absolute;left:80vh;width:10vh;height:5vh">ADD
+                            </button>
+
+                        </div>
+                    </section>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-1" style=""></div>
+</div>
+</div>
+<!-- Core -->
+<script src="./assets/vendor/jquery/jquery.min.js"></script>
+<script src="./assets/vendor/popper/popper.min.js"></script>
+<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="./assets/vendor/headroom/headroom.min.js"></script>
+<!-- Optional JS -->
+<script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+<script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+<script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<!-- Argon JS -->
+<script src="./assets/js/argon.js?v=1.0.1"></script>
+</body>
+
+</html>
